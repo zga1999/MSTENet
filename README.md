@@ -80,8 +80,6 @@ python -c "import torch, mmcv, mmdet, mmengine, mmrotate; print(torch.__version_
 ## Citation
 
 
-
 ```bibtex
 
-}
 ```
