@@ -10,7 +10,7 @@
 
 The MSTENet backbones are pre-trained on ImageNet for 300 epochs.
 
-- **MSTENet-T**: [Download]
+- **MSTENet-T**: 
 - **MSTENet-S**: [Download](https://github.com/zga1999/MSTENet/releases/download/Weights_Logs/dota_MSTENet-S_fpn_oriented_1x.pth)
 
 ### DOTA-v1.0(split_ms_dota)
