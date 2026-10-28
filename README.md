@@ -31,13 +31,12 @@ The MSTENet backbones are pre-trained on ImageNet for 300 epochs.
 ### DIOR
 
 | Model | mAP | Angle | Lr schd | Batch Size | Configs | Logs |
-|---|---|---|---|---|---|---|---|
-
+|---|---|---|---|---|---|---|
 | **MSTENet-S** | **68.84** | le90 | 1x | 2×8 | [config](https://github.com/zga1999/MSTENet/blob/main/projects/mstenet/dior_mstenet-s_fpn_oriented_1x.py) | |
 
 ### HRSC2016
 
 | Model | mAP(07) | mAP(12) | Angle | Lr schd | Batch Size | Configs | Logs |
-|---|---|---|---|---|---|---|---|---|
+|---|---|---|---|---|---|---|---|
 | MSTENet-S| 90.67 | 98.52 | le90 | 1x | 2×8 | [config](https://github.com/zga1999/MSTENet/blob/main/projects/mstenet/hrsc2016_mstenet-s_fpn_oriented_1x.py) |  | 
 
