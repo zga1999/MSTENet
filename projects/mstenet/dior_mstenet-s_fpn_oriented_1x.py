@@ -25,7 +25,7 @@ dataset_type = 'DIORDataset'
 data_root = '../datasets/obb/DIOR/'
 backend_args = None
 
-# DIOR 原图多为 800x800，与 configs/_base_/datasets/dior.py 保持一致
+
 train_pipeline = [
     dict(type='mmdet.LoadImageFromFile', backend_args=backend_args),
     dict(type='mmdet.LoadAnnotations', with_bbox=True, box_type='qbox'),
@@ -120,7 +120,7 @@ val_cfg = dict(type='ValLoop')
 test_cfg = dict(type='TestLoop')
 
 ####################################### 优化器与学习率配置 #######################################
-# 与 projects/lsk 完全一致，保证两者精度可直接对比
+
 optim_wrapper = dict(
     type='OptimWrapper',
     optimizer=dict(
@@ -169,9 +169,7 @@ load_from = None
 resume = False
 
 ####################################### 模型配置 #######################################
-# MCSTNet 只替换了 LSKNet 的 spatial_gating_unit；其余结构与 LSKNet 同名同形。
-# 下方 pretrained 为本次 DIOR 1x 训练得到的 backbone 权重（非 ImageNet）。
-# DIOR 1x 最佳 backbone（epoch12, mAP 0.6700），格式同 lsk_*_backbone.pth
+
 pretrained = 'weights/mstenet/mstenet-s_backbone.pth'
 
 model = dict(
@@ -190,7 +188,6 @@ model = dict(
         drop_path_rate=0.1,
         depths=[2, 2, 4, 2],
         init_cfg=dict(type='Pretrained', checkpoint=pretrained),
-        # 官方 LSK 使用 SyncBN；单卡训练时 mmengine 会自动退回 BN
         norm_cfg=dict(type='SyncBN', requires_grad=True)),
     neck=dict(
         type='mmdet.FPN',

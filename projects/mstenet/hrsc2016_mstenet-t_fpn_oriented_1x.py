@@ -1,15 +1,11 @@
-"""MSTENet-T Oriented R-CNN on HRSC2016 (1x).
-
-Expected official-layout dataset::
-
-    ../datasets/obb/HRSC2016/
-      ImageSets/{trainval,test}.txt
-      FullDataSet/{AllImages,Annotations}/
-
-Train:
+"""
     python tools/train.py \
         projects/mstenet/hrsc2016_mstenet-t_fpn_oriented_1x.py \
-        --work-dir work_dirs/HRSC2016/hrsc2016_mstenet-t_fpn_oriented
+        --work-dir work_dirs/test
+
+
+
+
 """
 
 _base_ = './dior_mstenet-t_fpn_oriented_1x.py'

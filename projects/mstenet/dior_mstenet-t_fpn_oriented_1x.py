@@ -27,7 +27,6 @@ data_root = '../datasets/obb/DIOR/'
 backend_args = None
 
 ####################################### 数据流水线配置 #######################################
-# DIOR 原图多为 800x800，与 configs/_base_/datasets/dior.py 保持一致
 train_pipeline = [
     dict(type='mmdet.LoadImageFromFile', backend_args=backend_args),
     dict(type='mmdet.LoadAnnotations', with_bbox=True, box_type='qbox'),
@@ -67,10 +66,7 @@ test_pipeline = [
 ]
 
 ####################################### 数据加载器配置 #######################################
-# 目录结构:
-#   ImageSets/Main/train.txt val.txt trainval.txt test.txt
-#   JPEGImages-trainval / JPEGImages-test
-#   Annotations/Oriented Bounding Boxes/*.xml  (DIORDataset 默认 ann_subdir)
+
 train_dataloader = dict(
     batch_size=1,
     num_workers=2,
@@ -126,7 +122,7 @@ val_cfg = dict(type='ValLoop')
 test_cfg = dict(type='TestLoop')
 
 ####################################### 优化器与学习率配置 #######################################
-# 与 projects/lsk 完全一致，保证两者精度可直接对比
+
 optim_wrapper = dict(
     type='OptimWrapper',
     optimizer=dict(
@@ -175,8 +171,7 @@ load_from = None
 resume = False
 
 ####################################### 模型配置 #######################################
-# 同 -s 版本：MCSTNet 与 LSKNet 共享除 spatial_gating_unit 之外的全部结构，
-# 因此直接复用官方 LSK-T ImageNet 权重，只有 STM / FEM / GFF 从头学。
+
 pretrained = 'weights/mstenet/mstenet-t_backbone.pth'
 
 model = dict(
@@ -195,7 +190,6 @@ model = dict(
         drop_path_rate=0.1,
         depths=[3, 3, 5, 2],
         init_cfg=dict(type='Pretrained', checkpoint=pretrained),
-        # 官方 LSK 使用 SyncBN；单卡训练时 mmengine 会自动退回 BN
         norm_cfg=dict(type='SyncBN', requires_grad=True)),
     neck=dict(
         type='mmdet.FPN',

@@ -1,15 +1,11 @@
-"""MSTENet-S Oriented R-CNN on DOTA-v1.0 (single-scale, 1x).
-
-Expected preprocessed layout::
-
-    ../datasets/obb/DOTA/
-      trainval/{images,annfiles}/
-      val/{images,annfiles}/
-
-Train:
+"""
     python tools/train.py \
         projects/mstenet/dota_mstenet-s_fpn_oriented_1x.py \
-        --work-dir work_dirs/DOTA/dota_mstenet-s_fpn_oriented
+        --work-dir work_dirs/test
+
+
+
+        
 """
 
 _base_ = './dior_mstenet-s_fpn_oriented_1x.py'

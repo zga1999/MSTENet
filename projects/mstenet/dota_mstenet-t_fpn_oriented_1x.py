@@ -1,15 +1,8 @@
-"""MSTENet-T Oriented R-CNN on DOTA-v1.0 (single-scale, 1x).
-
-Expected preprocessed layout::
-
-    ../datasets/obb/DOTA/
-      trainval/{images,annfiles}/
-      val/{images,annfiles}/
-
-Train:
+"""
     python tools/train.py \
         projects/mstenet/dota_mstenet-t_fpn_oriented_1x.py \
-        --work-dir work_dirs/DOTA/dota_mstenet-t_fpn_oriented
+        --work-dir work_dirs/test
+
 """
 
 _base_ = './dior_mstenet-t_fpn_oriented_1x.py'
@@ -90,7 +83,6 @@ test_dataloader = val_dataloader
 val_evaluator = dict(type='DOTAMetric', metric='mAP')
 test_evaluator = val_evaluator
 
-# The DIOR T config still says MCSTNet; this file corrects it to MSTENet.
 model = dict(
     backbone=dict(type='MSTENet'),
     roi_head=dict(bbox_head=dict(num_classes=15)))
