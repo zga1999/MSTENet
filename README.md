@@ -1,8 +1,8 @@
 
-# MSTENet 🛰️: Multi-kernel Scale Transformation Enhancement Network with Gated Feature Fusion for Remote Sensing Object Detection [TGRS 2026]
+# MSTENet: Multi-kernel Scale Transformation Enhancement Network with Gated Feature Fusion for Remote Sensing Object Detection 
 
 
-## 🛰️ MSTENet: Remote Sensing Object Detection
+## Introduction
 
 MSTENet is designed to address scale variations and complex backgrounds in remote sensing object detection. It combines a **Scale Transformation Module (STM)** for multi-scale receptive field modeling, a **Fine-grained Enhancement Module (FEM)** for preserving target details, and a **Gated Feature Fusion (GFF)** module for adaptive feature integration. The enhanced features are processed by an FPN and an oriented detection head to produce precise detection results.
 
