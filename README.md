@@ -30,7 +30,7 @@ The MSTENet backbones are pre-trained on ImageNet for 300 epochs.
 ### DIOR
 | Model     | mAP   | Angle | Lr schd | Batch Size | Configs | Download |
 |---        |---    |---    |---      |---         |---      |---   |
-| MSTENet-S | 68.84 | le90  | 1x      | 2×8        | [config](https://github.com/zga1999/MSTENet/blob/main/projects/mstenet/dior_mstenet-s_fpn_oriented_1x.py) |[model](https://github.com/zga1999/MSTENet/blob/main/projects/mstenet/dota_mstenet-t_fpn_oriented_1x.py) [log](https://github.com/zga1999/MSTENet/blob/main/projects/mstenet/dota_mstenet-t_fpn_oriented_1x.py) |
+| MSTENet-S | 68.84 | le90  | 1x      | 2×8        | [config](https://github.com/zga1999/MSTENet/blob/main/projects/mstenet/dior_mstenet-s_fpn_oriented_1x.py) |[model](https://github.com/zga1999/MSTENet/blob/main/projects/mstenet/dota_mstenet-t_fpn_oriented_1x.py) \| [log](https://github.com/zga1999/MSTENet/blob/main/projects/mstenet/dota_mstenet-t_fpn_oriented_1x.py) |
 
 
 
@@ -39,5 +39,5 @@ The MSTENet backbones are pre-trained on ImageNet for 300 epochs.
 ### HRSC2016
 | Model    | mAP(07) | mAP(12) | Angle | Lr schd | Batch Size | Configs | Download |
 |---       |---      |---      |---    |---      |---         |---      |---   |
-| MSTENet-S| 90.67   | 98.52   | le90  | 1x      | 2×8        | [config](https://github.com/zga1999/MSTENet/blob/main/projects/mstenet/hrsc2016_mstenet-s_fpn_oriented_1x.py) | [model](https://github.com/zga1999/MSTENet/blob/main/projects/mstenet/dota_mstenet-t_fpn_oriented_1x.py) [log](https://github.com/zga1999/MSTENet/blob/main/projects/mstenet/dota_mstenet-t_fpn_oriented_1x.py) | 
+| MSTENet-S| 90.67   | 98.52   | le90  | 1x      | 2×8        | [config](https://github.com/zga1999/MSTENet/blob/main/projects/mstenet/hrsc2016_mstenet-s_fpn_oriented_1x.py) | [model](https://github.com/zga1999/MSTENet/blob/main/projects/mstenet/dota_mstenet-t_fpn_oriented_1x.py) \| [log](https://github.com/zga1999/MSTENet/blob/main/projects/mstenet/dota_mstenet-t_fpn_oriented_1x.py) | 
 
