@@ -21,14 +21,12 @@ The MSTENet backbones are pre-trained on ImageNet for 300 epochs.
 
 ### DOTA-v1.0
 
-| Model | mAP | Angle | Lr schd | Batch Size | Configs | Download | Note |
-|---|---|---|---|---|---|---|---|
-| O-RCNN | 80.87 | - | 2x | - | - | - | Baseline |
-| LSKNet | 81.85 | - | 1x | - | - | - | - |
-| PKINet | 80.10 | - | 1x | - | - | - | - |
-| STD-O | 82.24 | - | - | - | - | - | - |
-| MSTENet-T | 81.59 | le90 | 1x | 1×8 | [config](https://github.com/zga1999/MSTENet/blob/main/projects/mstenet/dota_mstenet-t_fpn_oriented_1x.py) | Coming soon | 30.1M / 172G |
-| **MSTENet-S** | **82.72** | le90 | 1x | 2×8 | [config](https://github.com/zga1999/MSTENet/blob/main/projects/mstenet/dota_mstenet-s_fpn_oriented_1x.py) | Coming soon | 39.7M / 209G |
+| Model | mAP | Angle | Lr schd | Batch Size | Configs | Logs |
+|---    |---  |---    |---      |---         |---      |-     |
+| LSKNet-S | 81.85 | le90 | 1x | 2×8 | - | - |
+| PKINet-S | 80.10 | le90 | 1x | 2×8 | - | - |
+| STD | 82.24 | le90 | 1X | 1×8 | - | - |
+| **MSTENet-S** | **82.72** | le90 | 1x | 2×8 | [config](https://github.com/zga1999/MSTENet/blob/main/projects/mstenet/dota_mstenet-s_fpn_oriented_1x.py) |  |
 
 **Note:** DOTA-v1.0 results are reported using the multi-scale cropping strategy described in the paper.
 
