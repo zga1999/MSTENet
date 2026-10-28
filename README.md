@@ -2,13 +2,17 @@
 # MSTENet: Multi-kernel Scale Transformation Enhancement Network with Gated Feature Fusion for Remote Sensing Object Detection 
 
 
-## Introduction
+
+
+## Overview
 
 MSTENet is designed to address scale variations and complex backgrounds in remote sensing object detection. It combines a **Scale Transformation Module (STM)** for multi-scale receptive field modeling, a **Fine-grained Enhancement Module (FEM)** for preserving target details, and a **Gated Feature Fusion (GFF)** module for adaptive feature integration. The enhanced features are processed by an FPN and an oriented detection head to produce precise detection results.
 
 <p align="center">
   <img src="./demo/pipeline.png" width="100%" alt="MSTENet Pipeline">
 </p>
+
+
 
 
 ## Results and Models
@@ -27,20 +31,17 @@ The MSTENet backbones are pre-trained on ImageNet for 300 epochs.
 | MSTENet-S | 82.72 | le90  | 1x      | 2×8        | [config](https://github.com/zga1999/MSTENet/blob/main/projects/mstenet/dota_mstenet-s_fpn_oriented_1x.py) | [model](https://github.com/zga1999/MSTENet/releases/download/Weights_Logs/dota_MSTENet-S_fpn_oriented_1x.pth) \| [log](https://github.com/zga1999/MSTENet/releases/download/Weights_Logs/dota_MSTENet-S_20260222_233323.log)   |
 
 
-
 ### DIOR
 | Model     | mAP   | Angle | Lr schd | Batch Size | Configs | Download |
 |---        |---    |---    |---      |---         |---      |---   |
 | MSTENet-S | 68.84 | le90  | 1x      | 2×8        | [config](https://github.com/zga1999/MSTENet/blob/main/projects/mstenet/dior_mstenet-s_fpn_oriented_1x.py) | |
 
 
-
-
-
 ### HRSC2016
 | Model    | mAP(07) | mAP(12) | Angle | Lr schd | Batch Size | Configs | Download |
 |---       |---      |---      |---    |---      |---         |---      |---   |
 | MSTENet-S| 90.67   | 98.52   | le90  | 1x      | 2×8        | [config](https://github.com/zga1999/MSTENet/blob/main/projects/mstenet/hrsc2016_mstenet-s_fpn_oriented_1x.py) |  | 
+
 
 
 
@@ -73,3 +74,14 @@ python -c "import torch, mmcv, mmdet, mmengine, mmrotate; print(torch.__version_
 ```
 
 **Note:** MSTENet requires MMRotate 1.x and is not compatible with the MMRotate 0.x installation procedure. The commands above target a CUDA 12.1 environment.
+
+
+
+## Citation
+
+
+
+```bibtex
+
+}
+```
