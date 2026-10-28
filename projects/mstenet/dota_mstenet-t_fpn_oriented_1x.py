@@ -1,0 +1,96 @@
+"""MSTENet-T Oriented R-CNN on DOTA-v1.0 (single-scale, 1x).
+
+Expected preprocessed layout::
+
+    ../datasets/obb/DOTA/
+      trainval/{images,annfiles}/
+      val/{images,annfiles}/
+
+Train:
+    python tools/train.py \
+        projects/mstenet/dota_mstenet-t_fpn_oriented_1x.py \
+        --work-dir work_dirs/DOTA/dota_mstenet-t_fpn_oriented
+"""
+
+_base_ = './dior_mstenet-t_fpn_oriented_1x.py'
+
+dataset_type = 'DOTADataset'
+data_root = '../datasets/obb/DOTA/'
+backend_args = None
+
+train_pipeline = [
+    dict(type='mmdet.LoadImageFromFile', backend_args=backend_args),
+    dict(type='mmdet.LoadAnnotations', with_bbox=True, box_type='qbox'),
+    dict(type='ConvertBoxType', box_type_mapping=dict(gt_bboxes='rbox')),
+    dict(
+        type='mmdet.FilterAnnotations',
+        min_gt_bbox_wh=(1e-2, 1e-2),
+        keep_empty=True),
+    dict(type='mmdet.Resize', scale=(1024, 1024), keep_ratio=True),
+    dict(
+        type='mmdet.RandomFlip',
+        prob=0.75,
+        direction=['horizontal', 'vertical', 'diagonal']),
+    dict(type='mmdet.PackDetInputs')
+]
+
+val_pipeline = [
+    dict(type='mmdet.LoadImageFromFile', backend_args=backend_args),
+    dict(type='mmdet.Resize', scale=(1024, 1024), keep_ratio=True),
+    dict(type='mmdet.LoadAnnotations', with_bbox=True, box_type='qbox'),
+    dict(type='ConvertBoxType', box_type_mapping=dict(gt_bboxes='rbox')),
+    dict(
+        type='mmdet.PackDetInputs',
+        meta_keys=('img_id', 'img_path', 'ori_shape', 'img_shape',
+                   'scale_factor'))
+]
+
+test_pipeline = [
+    dict(type='mmdet.LoadImageFromFile', backend_args=backend_args),
+    dict(type='mmdet.Resize', scale=(1024, 1024), keep_ratio=True),
+    dict(
+        type='mmdet.PackDetInputs',
+        meta_keys=('img_id', 'img_path', 'ori_shape', 'img_shape',
+                   'scale_factor'))
+]
+
+train_dataloader = dict(
+    _delete_=True,
+    batch_size=1,
+    num_workers=2,
+    persistent_workers=True,
+    sampler=dict(type='DefaultSampler', shuffle=True),
+    batch_sampler=None,
+    dataset=dict(
+        type=dataset_type,
+        data_root=data_root,
+        ann_file='trainval/annfiles/',
+        data_prefix=dict(img_path='trainval/images/'),
+        filter_cfg=dict(filter_empty_gt=True),
+        pipeline=train_pipeline,
+        backend_args=backend_args))
+
+val_dataloader = dict(
+    _delete_=True,
+    batch_size=1,
+    num_workers=2,
+    persistent_workers=True,
+    drop_last=False,
+    sampler=dict(type='DefaultSampler', shuffle=False),
+    dataset=dict(
+        type=dataset_type,
+        data_root=data_root,
+        ann_file='val/annfiles/',
+        data_prefix=dict(img_path='val/images/'),
+        test_mode=True,
+        pipeline=val_pipeline,
+        backend_args=backend_args))
+
+test_dataloader = val_dataloader
+val_evaluator = dict(type='DOTAMetric', metric='mAP')
+test_evaluator = val_evaluator
+
+# The DIOR T config still says MCSTNet; this file corrects it to MSTENet.
+model = dict(
+    backbone=dict(type='MSTENet'),
+    roi_head=dict(bbox_head=dict(num_classes=15)))

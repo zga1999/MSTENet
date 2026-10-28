@@ -1,0 +1,34 @@
+# Training artifacts and local model weights
+/weights/
+/work_dirs/
+/work_vis/
+*.pth
+*.pt
+*.ckpt
+
+# Datasets and generated data
+/data/
+/datasets/
+
+# Python caches and build artifacts
+__pycache__/
+*.py[cod]
+*.egg-info/
+.mim/
+build/
+dist/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Runtime output
+*.log
+*.out
+wandb/
+runs/
+
+# IDE / OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
