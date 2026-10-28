@@ -42,8 +42,8 @@ The MSTENet backbones are pre-trained on ImageNet for 300 epochs.
 MSTENet is implemented based on [MMRotate 1.x](https://mmrotate.readthedocs.io/en/1.x/), [PyTorch](https://pytorch.org/), [MMCV](https://github.com/open-mmlab/mmcv), [MMDetection](https://github.com/open-mmlab/mmdetection), and [MMEngine](https://github.com/open-mmlab/mmengine). The following steps provide instructions for setting up the environment.
 
 ```bash
-conda create -n mstenet python=3.10 -y
-conda activate mstenet
+conda create -n mmrotate1x python=3.10 -y
+conda activate mmrotate1x
 
 pip install torch==2.1.2 torchvision==0.16.2 --index-url https://download.pytorch.org/whl/cu121
 
