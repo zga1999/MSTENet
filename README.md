@@ -2,13 +2,7 @@
 
 
 
-## Results and Models
 
-### Pre-trained Backbones
-
-ImageNet pre-trained backbone (Model 1): **Download: TBD**
-
-ImageNet pre-trained backbone (Model 2): **Download: TBD**
 
 ## Results and Models
 
@@ -16,7 +10,7 @@ ImageNet pre-trained backbone (Model 2): **Download: TBD**
 
 The MSTENet backbones are pre-trained on ImageNet for 300 epochs.
 
-- **MSTENet-T**: Download: Coming soon (`https://github.com/zga1999/MSTENet/releases/download/Weights_Logs/mstenet-s_backbone.pthh`)
+- **MSTENet-T**: Download: [Download](https://github.com/zga1999/MSTENet/releases/download/Weights_Logs/dota_MSTENet-S_fpn_oriented_1x.pth)
 - **MSTENet-S**: Download: Coming soon (`weights/mstenet/mstenet-s_backbone.pth`)
 
 ### DOTA-v1.0(split_ms_dota)
