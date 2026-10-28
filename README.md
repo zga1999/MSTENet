@@ -23,10 +23,8 @@ The MSTENet backbones are pre-trained on ImageNet for 300 epochs.
 
 | Model | mAP | Angle | Lr schd | Batch Size | Configs | Logs |
 |---    |---  |---    |---      |---         |---      |-     |
-| LSKNet-S | 81.85 | le90 | 1x | 2×8 | - | - |
-| PKINet-S | 80.10 | le90 | 1x | 2×8 | - | - |
-| STD | 82.24 | le90 | 1X | 1×8 | - | - |
-| **MSTENet-S** | **82.72** | le90 | 1x | 2×8 | [config](https://github.com/zga1999/MSTENet/blob/main/projects/mstenet/dota_mstenet-s_fpn_oriented_1x.py) |  |
+| MSTENet-T | 81.59 | le90 | 1x | 1×8 | [config](https://github.com/zga1999/MSTENet/blob/main/projects/mstenet/dota_mstenet-t_fpn_oriented_1x.py) |  |
+| MSTENet-S | 82.72 | le90 | 1x | 2×8 | [config](https://github.com/zga1999/MSTENet/blob/main/projects/mstenet/dota_mstenet-s_fpn_oriented_1x.py) |  |
 
 **Note:** DOTA-v1.0 results are reported using the multi-scale cropping strategy described in the paper.
 
@@ -62,3 +60,4 @@ MSTENet is implemented with PyTorch and MMRotate using Oriented R-CNN as the det
 - **Evaluation GPU:** NVIDIA L20
 
 Batch Size is expressed as the number of images per GPU multiplied by the number of training GPUs. The reported results are taken from the MSTENet paper; checkpoint downloads will be provided when available.
+
